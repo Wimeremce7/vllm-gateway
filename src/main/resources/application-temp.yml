@@ -1,0 +1,54 @@
+mongo-plus:
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: xxx
+      username: xxx
+      password: xxx
+      authenticationDatabase: admin
+      connectTimeoutMS: 50000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: openai-chat-completions
+          uri: xxx
+          predicates:
+            - Path=/v1/chat/completions
+            - Method=POST
+          filters:
+            - name: RequestSize
+              args:
+                maxSize: 100MB
+        - id: openai-completions
+          uri: xxx
+          predicates:
+            - Path=/v1/completions
+            - Method=POST
+          filters:
+            - name: RequestSize
+              args:
+                maxSize: 100MB
+        - id: openai-models
+          uri: xxx
+          predicates:
+            - Path=/v1/models
+            - Method=GET
+          filters:
+            - name: RequestSize
+              args:
+                maxSize: 5MB
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origins: "*"
+            allowed-methods: "*"
+            allowed-headers: "*"
+
+vllm:
+  model-mapping:
+    Qwen3-235B: xxx
+    Qwen3-32B: xxx
+    Qwen2.5-VL-72B: xxx

@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+  netty:
+    connection-timeout: 30m
+    max-initial-line-length: 262144
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: vllm-edge-gateway
+
+logging:
+  level:
+    org.springframework.cloud.gateway: INFO
+    com.zjsyinfo: INFO
+  config: classpath:logback-plus.xml
+
+
