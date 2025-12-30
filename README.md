@@ -32,7 +32,7 @@ vllm-gateway 是一个基于 Spring Cloud Gateway 构建的 AI 模型网关，�
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/你的用户名/vllm-gateway.git
+git clone https://github.com/Wimeremce7/vllm-gateway.git
 cd vllm-gateway
 ```
 
